@@ -1,0 +1,327 @@
+# Non-Functional Requirements Specification (NFR)
+
+**Project Name:** AI Cheque Extraction Quality Analytics Platform
+
+**Project Version:** 1.0
+
+**Document Version:** 1.0
+
+**Prepared By:** Malarvizhi S
+
+**Role:** Data Analyst
+
+**Last Updated:** 02-Aug-2026
+
+---
+
+# Document Control
+
+| Version | Date | Author | Description |
+|----------|------------|----------------|------------------------------|
+|1.0|02-Aug-2026|Malarvizhi S|Initial Non-Functional Requirements Specification|
+
+---
+
+# Table of Contents
+
+1. Purpose
+2. Performance Requirements
+3. Availability Requirements
+4. Scalability Requirements
+5. Security Requirements
+6. Reliability Requirements
+7. Data Integrity Requirements
+8. Maintainability Requirements
+9. Audit Requirements
+10. Usability Requirements
+11. Compatibility Requirements
+12. Backup & Recovery Requirements
+13. Compliance Requirements
+14. Assumptions
+15. Constraints
+
+---
+
+# 1. Purpose
+
+This document defines the non-functional requirements for the AI Cheque Extraction Quality Analytics Platform.
+
+Non-functional requirements describe how the system should perform, how secure it should be, how reliable it should be, and how it should support enterprise-level business operations.
+
+---
+
+# 2. Performance Requirements
+
+## NFR-001
+
+The system shall support processing batches containing approximately **2,000–3,000 cheque images per Shoe Box**.
+
+---
+
+## NFR-002
+
+The SQL Server database shall support querying large historical datasets without significant performance degradation.
+
+---
+
+## NFR-003
+
+Power BI dashboards should load operational reports within an acceptable response time under normal business conditions.
+
+---
+
+## NFR-004
+
+The platform shall support concurrent access by multiple business users for reporting and analysis.
+
+---
+
+# 3. Availability Requirements
+
+## NFR-005
+
+The analytics platform should be available during business operating hours for monitoring and reporting activities.
+
+---
+
+## NFR-006
+
+Historical extraction and validation reports shall remain available for business review.
+
+---
+
+# 4. Scalability Requirements
+
+## NFR-007
+
+The solution shall support future expansion to additional banking projects and document types.
+
+---
+
+## NFR-008
+
+The database shall support increasing batch volumes without requiring major redesign.
+
+---
+
+## NFR-009
+
+The architecture should allow additional AI extraction models to be integrated in future releases.
+
+---
+
+# 5. Security Requirements
+
+## NFR-010
+
+Only authorized users shall access business reports and validation data.
+
+---
+
+## NFR-011
+
+Manual correction history shall be protected from unauthorized modification.
+
+---
+
+## NFR-012
+
+Business-critical data shall remain protected from accidental deletion.
+
+---
+
+# 6. Reliability Requirements
+
+## NFR-013
+
+The platform shall maintain consistent reporting across all dashboards.
+
+---
+
+## NFR-014
+
+Validation results shall remain synchronized with corrected records.
+
+---
+
+## NFR-015
+
+Business reports shall reflect the latest validated data available in SQL Server.
+
+---
+
+# 7. Data Integrity Requirements
+
+## NFR-016
+
+Leading zeros in Account Number and Cheque Number shall always be preserved.
+
+---
+
+## NFR-017
+
+No duplicate combination of Account Number and Cheque Number shall exist after validation.
+
+---
+
+## NFR-018
+
+Mandatory business fields shall never be NULL in validated records.
+
+---
+
+## NFR-019
+
+Cheque dates shall comply with approved business date ranges.
+
+---
+
+# 8. Maintainability Requirements
+
+## NFR-020
+
+Business validation rules shall be easy to update when banking requirements change.
+
+---
+
+## NFR-021
+
+Additional dashboards should be developed without redesigning the database.
+
+---
+
+## NFR-022
+
+Documentation shall remain version controlled using GitHub.
+
+---
+
+# 9. Audit Requirements
+
+## NFR-023
+
+Every manual correction shall be recorded with complete audit history.
+
+Audit information shall include:
+
+- Corrected Field
+- Old Value
+- New Value
+- Corrected By
+- Correction Date
+- Review Status
+
+---
+
+## NFR-024
+
+Historical correction records shall remain available for future audit purposes.
+
+---
+
+# 10. Usability Requirements
+
+## NFR-025
+
+Power BI dashboards shall present KPIs in a clear and user-friendly format.
+
+---
+
+## NFR-026
+
+Business users should identify operational issues without requiring SQL knowledge.
+
+---
+
+## NFR-027
+
+Reports should support filtering by:
+
+- Box Barcode
+- RC Box Barcode
+- Shoe Box Barcode
+- Batch
+- Processing Date
+
+---
+
+# 11. Compatibility Requirements
+
+## NFR-028
+
+The solution shall support Microsoft SQL Server as the primary database.
+
+---
+
+## NFR-029
+
+The reporting layer shall support Microsoft Power BI Desktop.
+
+---
+
+## NFR-030
+
+The solution shall support integration with existing AI extraction outputs generated by Vision Language Models.
+
+---
+
+# 12. Backup and Recovery Requirements
+
+## NFR-031
+
+Business-critical data shall be backed up according to organizational standards.
+
+---
+
+## NFR-032
+
+Audit history shall remain recoverable in case of system failure.
+
+---
+
+## NFR-033
+
+Historical reports should remain accessible after database restoration.
+
+---
+
+# 13. Compliance Requirements
+
+The solution shall comply with organizational policies regarding:
+
+- Data Quality
+- Auditability
+- Business Reporting
+- Historical Record Maintenance
+
+---
+
+# 14. Assumptions
+
+The following assumptions are considered during project implementation:
+
+- The Vision Language Model has already extracted cheque information.
+- SQL Server is available as the enterprise database.
+- Business users will validate failed records manually.
+- Power BI is available for reporting.
+- Folder hierarchy follows the Box → RC Box → Shoe Box structure.
+
+---
+
+# 15. Constraints
+
+The following constraints apply to this project:
+
+- The platform does not perform OCR or AI model training.
+- Only analytics, validation, and reporting are within project scope.
+- Historical cheque dates are limited to the business period (2000–2017).
+- One image represents one cheque.
+- Manual correction is required when AI extraction cannot satisfy business validation rules.
+
+---
+
+# Summary
+
+The non-functional requirements ensure that the AI Cheque Extraction Quality Analytics Platform is secure, scalable, maintainable, reliable, and suitable for enterprise-level banking operations.
+
+The platform is designed to support large-scale cheque digitization projects while providing accurate reporting, operational visibility, business rule enforcement, and complete audit traceability.
